@@ -18,7 +18,7 @@ public class FirstAndroidTest {
         DesiredCapabilities caps = new DesiredCapabilities();
         caps.setCapability("platformName", "Android");
 //        caps.setCapability("automationName", "UiAutomator2");
-        caps.setCapability("platformVersion", "14.0");
+        caps.setCapability("platformVersion", "10.0");
         caps.setCapability("deviceName", "emulator-5554");
         caps.setCapability("appPackage", "com.google.android.dialer");
         caps.setCapability("appActivity", "com.google.android.dialer.extensions.GoogleDialtactsActivity");
