@@ -28,4 +28,6 @@ jobs:
       uses: reactivecircus/android-emulator-runner@v2
       with:
         api-level: 34
+        license: accept
+        profile: Pixel_2_API_29
         script: mvn clean test -Pandroid
