@@ -30,8 +30,9 @@ jobs:
     - name: run tests
       uses: reactivecircus/android-emulator-runner@v2
       with:
-        api-level: 29
-        script: adb devices
+        api-level: 34
+        script: mvn clean test -Pandroid
+
     # - name: Start Android Emulator
     #   uses: reactivecircus/android-emulator-runner@v2
     #   with:
