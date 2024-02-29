@@ -26,12 +26,9 @@ public class FirstAndroidTest {
     }
     @Test
     public void click_test() {
-        driver.findElement(By.id("dialpad_fab")).click();
-        driver.findElement(By.id("zero")).click();
-        driver.findElement(By.id("one")).click();
-        driver.findElement(By.id("two")).click();
+        driver.findElement(By.id("fab")).click();
+        driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
     }
-
     @AfterTest
     public void tearDown() {
         if (null != driver) {
