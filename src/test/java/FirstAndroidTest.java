@@ -20,7 +20,7 @@ public class FirstAndroidTest {
 //        caps.setCapability("automationName", "UiAutomator2");
         caps.setCapability("platformVersion", "10.0");
         caps.setCapability("deviceName", "emulator-5554");
-        capabilities.setCapability("app",
+        caps.setCapability("app",
                 System.getProperty("user.dir") + "/apps/ToDo.apk");
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps);
     }
