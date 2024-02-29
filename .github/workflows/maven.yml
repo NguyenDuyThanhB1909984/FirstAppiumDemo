@@ -33,3 +33,9 @@ jobs:
       with:
         api-level: 29
         script: mvn clean test -Pandroid -X
+        
+    - name: Upload Reports
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        path: ${{ github.workspace }}/report/**/*
