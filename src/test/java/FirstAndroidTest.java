@@ -10,9 +10,21 @@ import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.io.File;
+import java.io.IOException;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.util.UUID;
+import java.util.concurrent.TimeUnit;
+
 public class FirstAndroidTest {
     AppiumDriver driver;
-
+    public void screenshot(String path_screenshot) throws IOException {
+        File srcFile = driver.getScreenshotAs(OutputType.FILE);
+        String filename= UUID.randomUUID().toString();
+        File targetFile=new File(path_screenshot + filename +".png");
+        FileUtils.copyFile(srcFile, targetFile);
+            }
     @BeforeTest
     public void setUp() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
@@ -27,7 +39,9 @@ public class FirstAndroidTest {
     @Test
     public void click_test() {
         driver.findElement(By.id("fab")).click();
+        screenshot(System.getProperty("user.dir") + "/report/")
         driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
+        screenshot(System.getProperty("user.dir") + "/report/")
     }
     @AfterTest
     public void tearDown() {
