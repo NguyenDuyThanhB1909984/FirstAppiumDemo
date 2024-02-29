@@ -1,7 +1,9 @@
-package Android;
+
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
@@ -24,7 +26,7 @@ public class FirstAndroidTest {
         String filename= UUID.randomUUID().toString();
         File targetFile=new File(path_screenshot + filename +".png");
         FileUtils.copyFile(srcFile, targetFile);
-            }
+    }
     @BeforeTest
     public void setUp() throws MalformedURLException {
         DesiredCapabilities caps = new DesiredCapabilities();
@@ -37,7 +39,7 @@ public class FirstAndroidTest {
         driver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), caps);
     }
     @Test
-    public void click_test() {
+    public void click_test() throws IOException {
         driver.findElement(By.id("fab")).click();
         screenshot(System.getProperty("user.dir") + "/report/");
         driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
