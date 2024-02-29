@@ -39,9 +39,9 @@ public class FirstAndroidTest {
     @Test
     public void click_test() {
         driver.findElement(By.id("fab")).click();
-        screenshot(System.getProperty("user.dir") + "/report/")
+        screenshot(System.getProperty("user.dir") + "/report/");
         driver.findElement(By.xpath("//android.widget.ImageButton[@content-desc=\"Navigate up\"]")).click();
-        screenshot(System.getProperty("user.dir") + "/report/")
+        screenshot(System.getProperty("user.dir") + "/report/");
     }
     @AfterTest
     public void tearDown() {
